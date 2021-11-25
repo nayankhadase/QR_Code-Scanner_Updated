@@ -8,20 +8,32 @@
 
 /* Begin PBXBuildFile section */
 		10C56FC4274B6530005E809D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C56FC3274B6530005E809D /* AppDelegate.swift */; };
-		10C56FC6274B6530005E809D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C56FC5274B6530005E809D /* ViewController.swift */; };
 		10C56FC9274B6530005E809D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10C56FC7274B6530005E809D /* Main.storyboard */; };
 		10C56FCB274B6532005E809D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10C56FCA274B6532005E809D /* Assets.xcassets */; };
 		10C56FCE274B6532005E809D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10C56FCC274B6532005E809D /* LaunchScreen.storyboard */; };
+		10C56FD6274B6710005E809D /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C56FD5274B6710005E809D /* ScannerViewController.swift */; };
+		10C56FD8274B698A005E809D /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C56FD7274B698A005E809D /* DetailsViewController.swift */; };
+		10C56FDA274B7EA1005E809D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C56FD9274B7EA1005E809D /* ViewController.swift */; };
+		10C56FDC274B8C02005E809D /* ImageScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C56FDB274B8C02005E809D /* ImageScannerViewController.swift */; };
+		10C56FDE274BA59F005E809D /* qr-code.png in Resources */ = {isa = PBXBuildFile; fileRef = 10C56FDD274BA59F005E809D /* qr-code.png */; };
+		10D1ECBC274CD8EC00C2066A /* qr-code (1).png in Resources */ = {isa = PBXBuildFile; fileRef = 10D1ECBB274CD8EB00C2066A /* qr-code (1).png */; };
+		10D1ECBE274CF94100C2066A /* louis-reed-pwcKF7L4-no-unsplash.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 10D1ECBD274CF94100C2066A /* louis-reed-pwcKF7L4-no-unsplash.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		10C56FC0274B6530005E809D /* QR_Code Scanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "QR_Code Scanner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		10C56FC3274B6530005E809D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		10C56FC5274B6530005E809D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		10C56FC8274B6530005E809D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		10C56FCA274B6532005E809D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		10C56FCD274B6532005E809D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		10C56FCF274B6532005E809D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		10C56FD5274B6710005E809D /* ScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
+		10C56FD7274B698A005E809D /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		10C56FD9274B7EA1005E809D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		10C56FDB274B8C02005E809D /* ImageScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageScannerViewController.swift; sourceTree = "<group>"; };
+		10C56FDD274BA59F005E809D /* qr-code.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "qr-code.png"; sourceTree = "<group>"; };
+		10D1ECBB274CD8EB00C2066A /* qr-code (1).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "qr-code (1).png"; sourceTree = "<group>"; };
+		10D1ECBD274CF94100C2066A /* louis-reed-pwcKF7L4-no-unsplash.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "louis-reed-pwcKF7L4-no-unsplash.jpg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,13 +67,35 @@
 			isa = PBXGroup;
 			children = (
 				10C56FC3274B6530005E809D /* AppDelegate.swift */,
-				10C56FC5274B6530005E809D /* ViewController.swift */,
-				10C56FC7274B6530005E809D /* Main.storyboard */,
 				10C56FCA274B6532005E809D /* Assets.xcassets */,
-				10C56FCC274B6532005E809D /* LaunchScreen.storyboard */,
 				10C56FCF274B6532005E809D /* Info.plist */,
+				10F1B576274E419400548C1E /* View */,
+				10F1B575274E418700548C1E /* Controllers */,
+				10C56FCC274B6532005E809D /* LaunchScreen.storyboard */,
+				10C56FDD274BA59F005E809D /* qr-code.png */,
+				10D1ECBB274CD8EB00C2066A /* qr-code (1).png */,
+				10D1ECBD274CF94100C2066A /* louis-reed-pwcKF7L4-no-unsplash.jpg */,
 			);
 			path = "QR_Code Scanner";
+			sourceTree = "<group>";
+		};
+		10F1B575274E418700548C1E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				10C56FD9274B7EA1005E809D /* ViewController.swift */,
+				10C56FD5274B6710005E809D /* ScannerViewController.swift */,
+				10C56FDB274B8C02005E809D /* ImageScannerViewController.swift */,
+				10C56FD7274B698A005E809D /* DetailsViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		10F1B576274E419400548C1E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				10C56FC7274B6530005E809D /* Main.storyboard */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -123,6 +157,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				10C56FCE274B6532005E809D /* LaunchScreen.storyboard in Resources */,
+				10D1ECBE274CF94100C2066A /* louis-reed-pwcKF7L4-no-unsplash.jpg in Resources */,
+				10C56FDE274BA59F005E809D /* qr-code.png in Resources */,
+				10D1ECBC274CD8EC00C2066A /* qr-code (1).png in Resources */,
 				10C56FCB274B6532005E809D /* Assets.xcassets in Resources */,
 				10C56FC9274B6530005E809D /* Main.storyboard in Resources */,
 			);
@@ -135,8 +172,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				10C56FC6274B6530005E809D /* ViewController.swift in Sources */,
+				10C56FD6274B6710005E809D /* ScannerViewController.swift in Sources */,
 				10C56FC4274B6530005E809D /* AppDelegate.swift in Sources */,
+				10C56FDA274B7EA1005E809D /* ViewController.swift in Sources */,
+				10C56FDC274B8C02005E809D /* ImageScannerViewController.swift in Sources */,
+				10C56FD8274B698A005E809D /* DetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,6 +237,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 5HQ3ZZS739;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -213,7 +254,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -258,6 +299,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 5HQ3ZZS739;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -268,7 +310,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -282,16 +324,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "QR_Code Scanner/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.nayan.QR-Code-Scanner";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sumasoft.nayannayanQRcode1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -299,16 +345,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "QR_Code Scanner/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.nayan.QR-Code-Scanner";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sumasoft.nayannayanQRcode1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -322,7 +372,7 @@
 				10C56FD1274B6532005E809D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		10C56FD2274B6532005E809D /* Build configuration list for PBXNativeTarget "QR_Code Scanner" */ = {
 			isa = XCConfigurationList;
@@ -331,7 +381,7 @@
 				10C56FD4274B6532005E809D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};
