@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		10783603275497B10014527A /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10783602275497B10014527A /* HistoryViewController.swift */; };
+		107836072754A07D0014527A /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107836062754A07D0014527A /* HistoryTableViewCell.swift */; };
+		1078360C2754B0F40014527A /* LocalHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1078360B2754B0F40014527A /* LocalHistory.swift */; };
 		10C56FC4274B6530005E809D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C56FC3274B6530005E809D /* AppDelegate.swift */; };
 		10C56FC9274B6530005E809D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10C56FC7274B6530005E809D /* Main.storyboard */; };
 		10C56FCB274B6532005E809D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10C56FCA274B6532005E809D /* Assets.xcassets */; };
@@ -21,6 +24,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		10783602275497B10014527A /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		107836062754A07D0014527A /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
+		1078360B2754B0F40014527A /* LocalHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalHistory.swift; sourceTree = "<group>"; };
 		10C56FC0274B6530005E809D /* QR_Code Scanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "QR_Code Scanner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		10C56FC3274B6530005E809D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		10C56FC8274B6530005E809D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -47,6 +53,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		107836052754A0550014527A /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				107836062754A07D0014527A /* HistoryTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		107836082754B0A80014527A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1078360B2754B0F40014527A /* LocalHistory.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		10C56FB7274B6530005E809D = {
 			isa = PBXGroup;
 			children = (
@@ -70,6 +92,8 @@
 				10C56FCA274B6532005E809D /* Assets.xcassets */,
 				10C56FCF274B6532005E809D /* Info.plist */,
 				10F1B576274E419400548C1E /* View */,
+				107836082754B0A80014527A /* Model */,
+				107836052754A0550014527A /* Cells */,
 				10F1B575274E418700548C1E /* Controllers */,
 				10C56FCC274B6532005E809D /* LaunchScreen.storyboard */,
 				10C56FDD274BA59F005E809D /* qr-code.png */,
@@ -86,6 +110,7 @@
 				10C56FD5274B6710005E809D /* ScannerViewController.swift */,
 				10C56FDB274B8C02005E809D /* ImageScannerViewController.swift */,
 				10C56FD7274B698A005E809D /* DetailsViewController.swift */,
+				10783602275497B10014527A /* HistoryViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -174,7 +199,10 @@
 			files = (
 				10C56FD6274B6710005E809D /* ScannerViewController.swift in Sources */,
 				10C56FC4274B6530005E809D /* AppDelegate.swift in Sources */,
+				1078360C2754B0F40014527A /* LocalHistory.swift in Sources */,
+				107836072754A07D0014527A /* HistoryTableViewCell.swift in Sources */,
 				10C56FDA274B7EA1005E809D /* ViewController.swift in Sources */,
+				10783603275497B10014527A /* HistoryViewController.swift in Sources */,
 				10C56FDC274B8C02005E809D /* ImageScannerViewController.swift in Sources */,
 				10C56FD8274B698A005E809D /* DetailsViewController.swift in Sources */,
 			);
@@ -323,7 +351,7 @@
 		10C56FD3274B6532005E809D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
@@ -344,7 +372,7 @@
 		10C56FD4274B6532005E809D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";

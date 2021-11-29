@@ -9,7 +9,14 @@
 import UIKit
 
 class ImageScannerViewController: UIViewController {
-
+    // user defaults:
+    //let defaults = UserDefaults.standard
+    
+    var localHistory = LocalHistory()
+    
+    var historyArray = [String]()
+    
+    
     @IBOutlet weak var pickBtnLabel: UIButton!
     @IBOutlet weak var imageHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var imageView: UIImageView!
@@ -23,7 +30,10 @@ class ImageScannerViewController: UIViewController {
         imageHeightConstraint.constant = imageView.frame.width
         imageView.layer.cornerRadius = 7
         imageView.clipsToBounds = true
-        // Do any additional setup after loading the view.
+        
+        if localHistory.getData(for: "ScanHistory").count > 0{
+            historyArray = localHistory.getData(for: "ScanHistory")
+        }
     }
     
     @IBAction func btnPressed(_ sender: UIButton) {
@@ -66,11 +76,17 @@ extension ImageScannerViewController: UIImagePickerControllerDelegate, UINavigat
                 print("count: \(features.count)")
                 for feature in features{
                     qrData = feature.messageString
+                    
                 }
                 if qrData != nil {
                     // perform segue
                     performSegue(withIdentifier: "ImageToDetails", sender: self)
                     picker.dismiss(animated: true, completion: nil)
+                    historyArray.insert(qrData!, at: 0)
+                    
+                    // user defaults
+                    localHistory.setData(for: self.historyArray)
+            
                     qrData = nil
                     imageView.image = UIImage()
                 }else{
