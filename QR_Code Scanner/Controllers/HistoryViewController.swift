@@ -19,6 +19,9 @@ class HistoryViewController: UIViewController {
         super.viewDidLoad()
         historyTableView.delegate = self
         historyTableView.dataSource = self
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         if localHistory.getData(for: "ScanHistory").count > 0{
             historyData = localHistory.getData(for: "ScanHistory")
         }
@@ -40,4 +43,9 @@ extension HistoryViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     
+}
+extension HistoryViewController: UITabBarDelegate{
+    func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        print("hello")
+    }
 }

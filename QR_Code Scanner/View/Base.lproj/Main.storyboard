@@ -106,7 +106,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="second" translatesAutoresizingMaskIntoConstraints="NO" id="t50-2F-afn">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="second" highlightedImage="QR Scanner" translatesAutoresizingMaskIntoConstraints="NO" id="t50-2F-afn">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H4i-7x-8IO">
@@ -306,10 +306,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oW5-72-DE7">
-                                <rect key="frame" x="0.0" y="751" width="414" height="145"/>
+                                <rect key="frame" x="0.0" y="713" width="414" height="100"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R1d-75-nXt">
-                                        <rect key="frame" x="20" y="20" width="374" height="55"/>
+                                        <rect key="frame" x="20" y="22.5" width="374" height="55"/>
                                         <color key="backgroundColor" red="0.85094809532165527" green="0.95677751302719116" blue="0.94118088483810425" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="55" id="WpW-dg-5eF"/>
@@ -324,20 +324,20 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.88958073839999996" green="0.73334476810000004" blue="0.87126906400000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.96161167510000001" green="0.73036239890277777" blue="0.622802734375" alpha="0.50171232880000005" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="145" id="3Og-6W-wW7"/>
+                                    <constraint firstAttribute="height" constant="100" id="3Og-6W-wW7"/>
                                     <constraint firstItem="R1d-75-nXt" firstAttribute="centerX" secondItem="oW5-72-DE7" secondAttribute="centerX" id="D2c-yt-cmh"/>
-                                    <constraint firstItem="R1d-75-nXt" firstAttribute="top" secondItem="oW5-72-DE7" secondAttribute="top" constant="20" id="Jiq-lB-bXO"/>
                                     <constraint firstItem="R1d-75-nXt" firstAttribute="leading" secondItem="oW5-72-DE7" secondAttribute="leading" constant="20" id="P5s-gA-UbS"/>
+                                    <constraint firstItem="R1d-75-nXt" firstAttribute="centerY" secondItem="oW5-72-DE7" secondAttribute="centerY" id="ZXa-JS-vd7"/>
                                     <constraint firstAttribute="trailing" secondItem="R1d-75-nXt" secondAttribute="trailing" constant="20" id="ule-mh-l4k"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dxd-Y3-Vk9">
-                                <rect key="frame" x="0.0" y="147" width="414" height="604"/>
+                                <rect key="frame" x="0.0" y="147" width="414" height="566"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="data" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GyY-Zp-kqx">
-                                        <rect key="frame" x="30" y="287.5" width="354" height="29"/>
+                                        <rect key="frame" x="30" y="268.5" width="354" height="29"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="29" id="kFa-WB-nW5"/>
@@ -361,7 +361,7 @@
                             <constraint firstItem="63k-2R-ync" firstAttribute="top" secondItem="opv-BT-A6J" secondAttribute="top" id="FUX-G8-3jO"/>
                             <constraint firstItem="oW5-72-DE7" firstAttribute="top" secondItem="dxd-Y3-Vk9" secondAttribute="bottom" id="KTz-Wu-PUz"/>
                             <constraint firstItem="63k-2R-ync" firstAttribute="leading" secondItem="9Rn-Bb-Hr9" secondAttribute="leading" id="OE4-wH-cgb"/>
-                            <constraint firstAttribute="bottom" secondItem="oW5-72-DE7" secondAttribute="bottom" id="U8x-im-F2Q"/>
+                            <constraint firstItem="9Rn-Bb-Hr9" firstAttribute="bottom" secondItem="oW5-72-DE7" secondAttribute="bottom" id="U8x-im-F2Q"/>
                             <constraint firstItem="dxd-Y3-Vk9" firstAttribute="top" secondItem="63k-2R-ync" secondAttribute="bottom" id="WZw-Nm-vck"/>
                             <constraint firstItem="63k-2R-ync" firstAttribute="trailing" secondItem="9Rn-Bb-Hr9" secondAttribute="trailing" id="vCL-3u-Owu"/>
                             <constraint firstItem="oW5-72-DE7" firstAttribute="trailing" secondItem="9Rn-Bb-Hr9" secondAttribute="trailing" id="vhW-wH-15h"/>
@@ -401,6 +401,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="QR Scanner" width="828" height="1793"/>
         <image name="second" width="828" height="1793"/>
     </resources>
     <inferredMetricsTieBreakers>
