@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="126" width="414" height="687"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HistoryTableViewCell" rowHeight="75" id="ymA-Dd-77i" customClass="HistoryTableViewCell" customModule="QR_Code_Scanner" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HistoryTableViewCell" rowHeight="75" id="ymA-Dd-77i" customClass="HistoryTableViewCell" customModule="QR_Code_Scanner" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ymA-Dd-77i" id="CUP-tD-YNl">
@@ -30,21 +30,38 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k8s-Ip-Ecu">
-                                                    <rect key="frame" x="20" y="21" width="374" height="33"/>
+                                                    <rect key="frame" x="20" y="21" width="314" height="33"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FEG-UO-I0j">
+                                                    <rect key="frame" x="336" y="21" width="50" height="30"/>
+                                                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="50" id="Ege-Rk-cDj"/>
+                                                        <constraint firstAttribute="height" constant="30" id="ZTj-y7-sf5"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Copy">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="copyBtnPressed:" destination="hfl-RF-wfy" eventType="touchUpInside" id="hPD-Np-Fe9"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="k8s-Ip-Ecu" firstAttribute="leading" secondItem="CUP-tD-YNl" secondAttribute="leadingMargin" id="EoK-HI-3MQ"/>
+                                                <constraint firstItem="FEG-UO-I0j" firstAttribute="top" secondItem="CUP-tD-YNl" secondAttribute="topMargin" constant="10" id="KXT-I6-A7f"/>
                                                 <constraint firstItem="k8s-Ip-Ecu" firstAttribute="top" secondItem="CUP-tD-YNl" secondAttribute="topMargin" constant="10" id="N24-FO-dcr"/>
-                                                <constraint firstItem="k8s-Ip-Ecu" firstAttribute="trailing" secondItem="CUP-tD-YNl" secondAttribute="trailingMargin" id="tGR-9X-Vr4"/>
+                                                <constraint firstItem="FEG-UO-I0j" firstAttribute="leading" secondItem="k8s-Ip-Ecu" secondAttribute="trailing" constant="2" id="jCF-nZ-172"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="FEG-UO-I0j" secondAttribute="trailing" constant="8" id="tYt-pC-bdf"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="k8s-Ip-Ecu" secondAttribute="bottom" constant="10" id="v5f-FU-Mdu"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="cellLabel" destination="k8s-Ip-Ecu" id="1NI-VH-A2e"/>
+                                            <outlet property="copyBtnLabel" destination="FEG-UO-I0j" id="fSD-1U-0VQ"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

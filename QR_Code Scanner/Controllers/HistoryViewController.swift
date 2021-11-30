@@ -10,6 +10,7 @@ import UIKit
 
 class HistoryViewController: UIViewController {
     @IBOutlet weak var historyTableView: UITableView!
+    var indexForCopy: Int?
     
     var localHistory = LocalHistory()
     
@@ -19,9 +20,21 @@ class HistoryViewController: UIViewController {
         super.viewDidLoad()
         historyTableView.delegate = self
         historyTableView.dataSource = self
+        updateArray()
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        updateArray()
+    }
+    
+    @IBAction func copyBtnPressed(_ sender: UIButton) {
+        let pasteboard = UIPasteboard.general
+        pasteboard.string = historyData[sender.tag]
+        sender.backgroundColor = UIColor.white
+        sender.setTitleColor(UIColor.blue, for: .normal)
+    }
+    
+    func updateArray(){
         if localHistory.getData(for: "ScanHistory").count > 0{
             historyData = localHistory.getData(for: "ScanHistory")
         }
@@ -37,15 +50,33 @@ extension HistoryViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        indexForCopy = indexPath.row
         let cell = tableView.dequeueReusableCell(withIdentifier: "HistoryTableViewCell", for: indexPath) as! HistoryTableViewCell
-        cell.cellLabel.text = historyData[indexPath.row]
+        cell.cellLabel.text = historyData[indexForCopy!]
+        cell.copyBtnLabel.tag = indexForCopy!
+        cell.copyBtnLabel.setTitleColor(UIColor.white, for: .normal)
+        cell.copyBtnLabel.backgroundColor = UIColor.blue
         return cell
     }
     
     
-}
-extension HistoryViewController: UITabBarDelegate{
-    func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
-        print("hello")
+    // delete table cell
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .delete
     }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete{
+            tableView.beginUpdates()
+            historyData.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            
+            localHistory.setData(for: historyData)
+            updateArray()
+            tableView.endUpdates()
+        }
+    }
+
+    
 }
+

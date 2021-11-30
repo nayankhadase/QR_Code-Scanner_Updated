@@ -12,16 +12,17 @@ class HistoryTableViewCell: UITableViewCell {
 
     @IBOutlet weak var cellLabel: UILabel!
     
+    @IBOutlet weak var copyBtnLabel: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        copyBtnLabel.layer.cornerRadius = 4
         
+      
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
     }
 
 }
