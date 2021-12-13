@@ -20,6 +20,9 @@ class ScannerViewController: UIViewController {
     var qrcodeFrameView = UIView() //An object that manages the content for a rectangular area on the screen.
     var qrCodeData: String?
     
+    private var localHistory = LocalHistory()
+    
+    private var historyArray = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +30,20 @@ class ScannerViewController: UIViewController {
         scanAreaImage.layer.borderColor = #colorLiteral(red: 0.944797092, green: 0.9084743924, blue: 0.8337131076, alpha: 1)
         scanAreaImage.layer.cornerRadius = 5
         scanAreaImage.clipsToBounds = true
+        if localHistory.getData(for: "ScanHistory") != nil{
+            historyArray = localHistory.getData(for: "ScanHistory")!
+        }
         getCameraScanData()
+        
+            // Initialize QR Code Frame to highlight the QR code
+//            qrCodeFrameView = UIView()
+//
+//            if let qrCodeFrameView = qrCodeFrameView {
+//                qrCodeFrameView.layer.borderColor = UIColor.green.cgColor
+//                qrCodeFrameView.layer.borderWidth = 2
+//                view.addSubview(qrCodeFrameView)
+//                view.bringSubviewToFront(qrCodeFrameView)
+//            }
         
     }
     func getCameraScanData(){
@@ -88,16 +104,27 @@ class ScannerViewController: UIViewController {
 //Methods for receiving metadata produced by a metadata capture output.
 extension ScannerViewController: AVCaptureMetadataOutputObjectsDelegate{
     func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
-        let metadataObj = metadataObjects.first as! AVMetadataMachineReadableCodeObject
-        if metadataObj.type == AVMetadataObject.ObjectType.qr{
-            //let barcodeObject = videoPreviewLayer?.transformedMetadataObject(for: metadataObj)
-            if metadataObj.stringValue != nil{
-                print(metadataObj.stringValue!)
-                qrCodeData = metadataObj.stringValue!
-                performSegue(withIdentifier: "ViewDetails", sender: self)
-                qrCodeData = nil
+        if metadataObjects.count > 0{
+            captureSession.stopRunning()
+            let metadataObj = metadataObjects.first as! AVMetadataMachineReadableCodeObject
+        
+            if metadataObj.type == AVMetadataObject.ObjectType.qr || metadataObj.type == AVMetadataObject.ObjectType.code128 || metadataObj.type == AVMetadataObject.ObjectType.code39 || metadataObj.type == .pdf417 || metadataObj.type == .code39Mod43{
+                //let barcodeObject = videoPreviewLayer?.transformedMetadataObject(for: metadataObj)
+                if metadataObj.stringValue != nil{
+                    qrCodeData = metadataObj.stringValue!
+                    performSegue(withIdentifier: "ViewDetails", sender: self)
+                    historyArray.insert(qrCodeData!, at: 0)
+                    
+                    // user defaults
+                    localHistory.setData(for: self.historyArray)
+                    qrCodeData = nil
+                }
             }
+        }else{
+//            qrCodeFrameView?.frame = CGRect.zero
+            print("count is nil: ")
         }
+        
     }
     
     

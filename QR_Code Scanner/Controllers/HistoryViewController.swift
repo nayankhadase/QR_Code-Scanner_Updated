@@ -35,8 +35,8 @@ class HistoryViewController: UIViewController {
     }
     
     func updateArray(){
-        if localHistory.getData(for: "ScanHistory").count > 0{
-            historyData = localHistory.getData(for: "ScanHistory")
+        if localHistory.getData(for: "ScanHistory") != nil{
+            historyData = localHistory.getData(for: "ScanHistory")!
         }
         historyTableView.reloadData()
     }

@@ -14,8 +14,12 @@ struct LocalHistory {
         defaults.set(arrayData, forKey: "ScanHistory")
     }
     
-    func getData(for key: String) -> [String]{
-        return defaults.array(forKey: key) as! [String]
+    func getData(for key: String) -> [String]?{
+        if let data = defaults.array(forKey: key) as? [String]{
+            return data
+        }else{
+            return nil
+        }
     }
     
 }

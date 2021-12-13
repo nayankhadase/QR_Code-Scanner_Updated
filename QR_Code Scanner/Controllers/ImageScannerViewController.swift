@@ -12,9 +12,9 @@ class ImageScannerViewController: UIViewController {
     // user defaults:
     //let defaults = UserDefaults.standard
     
-    var localHistory = LocalHistory()
+    private var localHistory = LocalHistory()
     
-    var historyArray = [String]()
+    private var historyArray = [String]()
     
     
     @IBOutlet weak var pickBtnLabel: UIButton!
@@ -31,8 +31,8 @@ class ImageScannerViewController: UIViewController {
         imageView.layer.cornerRadius = 7
         imageView.clipsToBounds = true
         
-        if localHistory.getData(for: "ScanHistory").count > 0{
-            historyArray = localHistory.getData(for: "ScanHistory")
+        if localHistory.getData(for: "ScanHistory") != nil{
+            historyArray = localHistory.getData(for: "ScanHistory")!
         }
     }
     

@@ -13,6 +13,7 @@ class DetailsViewController: UIViewController {
     
     @IBOutlet weak var buttonLabel: UIButton!
     
+    @IBOutlet weak var dataView: UIView!
     @IBOutlet weak var dataLabel: UILabel!
     
     var codeData: String?{
@@ -29,7 +30,8 @@ class DetailsViewController: UIViewController {
         buttonLabel.setTitle("Copy To ClipBoard", for: .normal)
         buttonLabel.layer.cornerRadius = 10
         buttonLabel.clipsToBounds = true
-        // Do any additional setup after loading the view.
+        self.navigationItem.hidesBackButton = true
+        dataView.layer.cornerRadius = dataLabel.frame.height / 4
     }
     
 
