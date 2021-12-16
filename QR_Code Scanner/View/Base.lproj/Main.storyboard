@@ -38,7 +38,7 @@
                                                     <rect key="frame" x="350" y="21" width="50" height="30"/>
                                                     <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="50" id="Ege-Rk-cDj"/>
+                                                        <constraint firstAttribute="width" relation="lessThanOrEqual" constant="50" id="Ege-Rk-cDj"/>
                                                         <constraint firstAttribute="height" constant="30" id="ZTj-y7-sf5"/>
                                                     </constraints>
                                                     <state key="normal" title="Copy">
@@ -227,7 +227,7 @@
                     </view>
                     <connections>
                         <outlet property="scanAreaImage" destination="CRh-Xy-Bfa" id="ajX-cc-TlZ"/>
-                        <segue destination="8o5-Ul-wbG" kind="show" identifier="ViewDetails" id="MEN-sP-8iE"/>
+                        <segue destination="8o5-Ul-wbG" kind="show" identifier="CameraToDetails" id="MEN-sP-8iE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -334,35 +334,26 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dxd-Y3-Vk9">
                                 <rect key="frame" x="0.0" y="0.0" width="428" height="743"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4T9-gk-BgP">
-                                        <rect key="frame" x="10" y="337" width="408" height="69"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="data" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GyY-Zp-kqx">
-                                                <rect key="frame" x="20" y="20" width="368" height="29"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="29" id="9In-lW-T4G"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="https://google.com  " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="bOz-x3-Hiu">
+                                        <rect key="frame" x="18" y="355" width="392" height="33"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="GyY-Zp-kqx" secondAttribute="trailing" constant="20" symbolic="YES" id="9cA-NE-YHN"/>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="69" id="FgV-Pi-2ji"/>
-                                            <constraint firstItem="GyY-Zp-kqx" firstAttribute="top" secondItem="4T9-gk-BgP" secondAttribute="top" constant="20" symbolic="YES" id="I73-Oq-DME"/>
-                                            <constraint firstAttribute="bottom" secondItem="GyY-Zp-kqx" secondAttribute="bottom" constant="20" symbolic="YES" id="Omf-Jb-myK"/>
-                                            <constraint firstItem="GyY-Zp-kqx" firstAttribute="leading" secondItem="4T9-gk-BgP" secondAttribute="leading" constant="20" symbolic="YES" id="cdN-KJ-0xV"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="JXA-Ad-pbM"/>
                                         </constraints>
-                                    </view>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="8o5-Ul-wbG" id="Z6u-pB-tom"/>
+                                        </connections>
+                                    </textView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.9616116751269036" green="0.82245766799137965" blue="0.68286504265683223" alpha="0.50171232876712324" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="4T9-gk-BgP" secondAttribute="trailing" constant="10" id="H3A-aT-L81"/>
-                                    <constraint firstItem="4T9-gk-BgP" firstAttribute="centerY" secondItem="dxd-Y3-Vk9" secondAttribute="centerY" id="OGz-bJ-2qX"/>
-                                    <constraint firstItem="4T9-gk-BgP" firstAttribute="leading" secondItem="dxd-Y3-Vk9" secondAttribute="leading" constant="10" id="jsl-C4-Qh8"/>
+                                    <constraint firstItem="bOz-x3-Hiu" firstAttribute="leading" secondItem="dxd-Y3-Vk9" secondAttribute="leading" constant="18" id="12C-ol-h9M"/>
+                                    <constraint firstItem="bOz-x3-Hiu" firstAttribute="centerY" secondItem="dxd-Y3-Vk9" secondAttribute="centerY" id="WmS-nd-0ra"/>
+                                    <constraint firstAttribute="trailing" secondItem="bOz-x3-Hiu" secondAttribute="trailing" constant="18" id="hNZ-yj-fHb"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -381,8 +372,7 @@
                     <navigationItem key="navigationItem" title="Your Scan Data" largeTitleDisplayMode="always" id="cXi-4d-G1m"/>
                     <connections>
                         <outlet property="buttonLabel" destination="R1d-75-nXt" id="20s-v3-QkJ"/>
-                        <outlet property="dataLabel" destination="GyY-Zp-kqx" id="Zeh-0F-4Af"/>
-                        <outlet property="dataView" destination="4T9-gk-BgP" id="o6h-Ub-CQE"/>
+                        <outlet property="textView" destination="bOz-x3-Hiu" id="A75-Dm-s3Z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SGq-L0-0uq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -415,6 +405,9 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="second" width="828" height="1793"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

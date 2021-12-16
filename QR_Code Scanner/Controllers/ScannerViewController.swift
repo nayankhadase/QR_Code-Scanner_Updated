@@ -23,6 +23,7 @@ class ScannerViewController: UIViewController {
     private var localHistory = LocalHistory()
     
     private var historyArray = [String]()
+    private let avObjectTypeArray: [AVMetadataObject.ObjectType] = [.code39Mod43, .pdf417, .code39, .code128, .code93, .ean13, .ean8, .itf14, .qr]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,20 +31,11 @@ class ScannerViewController: UIViewController {
         scanAreaImage.layer.borderColor = #colorLiteral(red: 0.944797092, green: 0.9084743924, blue: 0.8337131076, alpha: 1)
         scanAreaImage.layer.cornerRadius = 5
         scanAreaImage.clipsToBounds = true
-        if localHistory.getData(for: "ScanHistory") != nil{
-            historyArray = localHistory.getData(for: "ScanHistory")!
+        if localHistory.getData(for: K.userDefaultName) != nil{
+            historyArray = localHistory.getData(for: K.userDefaultName)!
         }
         getCameraScanData()
         
-            // Initialize QR Code Frame to highlight the QR code
-//            qrCodeFrameView = UIView()
-//
-//            if let qrCodeFrameView = qrCodeFrameView {
-//                qrCodeFrameView.layer.borderColor = UIColor.green.cgColor
-//                qrCodeFrameView.layer.borderWidth = 2
-//                view.addSubview(qrCodeFrameView)
-//                view.bringSubviewToFront(qrCodeFrameView)
-//            }
         
     }
     func getCameraScanData(){
@@ -68,7 +60,7 @@ class ScannerViewController: UIViewController {
             captureMetaDataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
             
             // which metadata object we want to process
-            captureMetaDataOutput.metadataObjectTypes = [AVMetadataObject.ObjectType.qr]
+            captureMetaDataOutput.metadataObjectTypes = avObjectTypeArray
             
             // initialie the vodeoPreview layer and add it a sublayer of view's layer
             //(AVCaptureVideoPreviewLayer is a subclass of CALayer that you use to display video as it is being captured by an input device.)
@@ -108,21 +100,24 @@ extension ScannerViewController: AVCaptureMetadataOutputObjectsDelegate{
             captureSession.stopRunning()
             let metadataObj = metadataObjects.first as! AVMetadataMachineReadableCodeObject
         
-            if metadataObj.type == AVMetadataObject.ObjectType.qr || metadataObj.type == AVMetadataObject.ObjectType.code128 || metadataObj.type == AVMetadataObject.ObjectType.code39 || metadataObj.type == .pdf417 || metadataObj.type == .code39Mod43{
-                //let barcodeObject = videoPreviewLayer?.transformedMetadataObject(for: metadataObj)
-                if metadataObj.stringValue != nil{
-                    qrCodeData = metadataObj.stringValue!
-                    performSegue(withIdentifier: "ViewDetails", sender: self)
-                    historyArray.insert(qrCodeData!, at: 0)
+            
+            for objType in avObjectTypeArray{
+                if metadataObj.type == objType{
+                  
+                    if let qrString = metadataObj.stringValue{
+                        qrCodeData = qrString
+                        performSegue(withIdentifier: K.cameraSegueIdentifier, sender: self)
+                        historyArray.insert(qrCodeData!, at: 0)
+                        
+                        // user defaults
+                        localHistory.setData(for: self.historyArray)
+                        qrCodeData = nil
+                        break
+                    }
                     
-                    // user defaults
-                    localHistory.setData(for: self.historyArray)
-                    qrCodeData = nil
                 }
+
             }
-        }else{
-//            qrCodeFrameView?.frame = CGRect.zero
-            print("count is nil: ")
         }
         
     }

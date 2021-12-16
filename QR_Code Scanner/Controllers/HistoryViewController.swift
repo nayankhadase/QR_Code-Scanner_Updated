@@ -35,8 +35,8 @@ class HistoryViewController: UIViewController {
     }
     
     func updateArray(){
-        if localHistory.getData(for: "ScanHistory") != nil{
-            historyData = localHistory.getData(for: "ScanHistory")!
+        if localHistory.getData(for: K.userDefaultName) != nil{
+            historyData = localHistory.getData(for: K.userDefaultName)!
         }
         historyTableView.reloadData()
     }
@@ -51,7 +51,7 @@ extension HistoryViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         indexForCopy = indexPath.row
-        let cell = tableView.dequeueReusableCell(withIdentifier: "HistoryTableViewCell", for: indexPath) as! HistoryTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: K.historyCellIdentifier, for: indexPath) as! HistoryTableViewCell
         cell.cellLabel.text = historyData[indexForCopy!]
         cell.copyBtnLabel.tag = indexForCopy!
         cell.copyBtnLabel.setTitleColor(UIColor.white, for: .normal)

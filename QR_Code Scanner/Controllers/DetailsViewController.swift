@@ -9,36 +9,33 @@
 import UIKit
 
 class DetailsViewController: UIViewController {
-
+    @IBOutlet weak var textView: UITextView!
+    
     
     @IBOutlet weak var buttonLabel: UIButton!
     
-    @IBOutlet weak var dataView: UIView!
-    @IBOutlet weak var dataLabel: UILabel!
     
-    var codeData: String?{
-        didSet{
-            DispatchQueue.main.async {
-                self.dataLabel.text = self.codeData
-            }
-            
-        }
-    }
+    var codeData: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        textView.dataDetectorTypes = .all
         buttonLabel.setTitle("Copy To ClipBoard", for: .normal)
         buttonLabel.layer.cornerRadius = 10
         buttonLabel.clipsToBounds = true
         self.navigationItem.hidesBackButton = true
-        dataView.layer.cornerRadius = dataLabel.frame.height / 4
+        updateUI(for: codeData ?? "empty")
     }
     
+    func updateUI(for textValue: String){
+        textView.text = textValue
+        textView.layer.cornerRadius = textView.frame.height / 4
+    }
 
     
     @IBAction func buttonPressed(_ sender: UIButton) {
         let pasteboard = UIPasteboard.general
-        pasteboard.string = dataLabel.text
+        pasteboard.string = textView.text
         buttonLabel.setTitle("Text Copied", for: .normal)
         buttonLabel.backgroundColor = UIColor.clear
         buttonLabel.layer.borderWidth = 2

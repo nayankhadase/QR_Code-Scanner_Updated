@@ -31,8 +31,8 @@ class ImageScannerViewController: UIViewController {
         imageView.layer.cornerRadius = 7
         imageView.clipsToBounds = true
         
-        if localHistory.getData(for: "ScanHistory") != nil{
-            historyArray = localHistory.getData(for: "ScanHistory")!
+        if localHistory.getData(for: K.userDefaultName) != nil{
+            historyArray = localHistory.getData(for: K.userDefaultName)!
         }
     }
     
@@ -80,7 +80,7 @@ extension ImageScannerViewController: UIImagePickerControllerDelegate, UINavigat
                 }
                 if qrData != nil {
                     // perform segue
-                    performSegue(withIdentifier: "ImageToDetails", sender: self)
+                    performSegue(withIdentifier: K.imageSegueIdentifier, sender: self)
                     picker.dismiss(animated: true, completion: nil)
                     historyArray.insert(qrData!, at: 0)
                     

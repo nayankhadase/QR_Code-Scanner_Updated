@@ -21,6 +21,7 @@
 		10C56FDE274BA59F005E809D /* qr-code.png in Resources */ = {isa = PBXBuildFile; fileRef = 10C56FDD274BA59F005E809D /* qr-code.png */; };
 		10D1ECBC274CD8EC00C2066A /* qr-code (1).png in Resources */ = {isa = PBXBuildFile; fileRef = 10D1ECBB274CD8EB00C2066A /* qr-code (1).png */; };
 		10D1ECBE274CF94100C2066A /* louis-reed-pwcKF7L4-no-unsplash.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 10D1ECBD274CF94100C2066A /* louis-reed-pwcKF7L4-no-unsplash.jpg */; };
+		10E8561927670DA0007EBC93 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E8561827670DA0007EBC93 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		10C56FDD274BA59F005E809D /* qr-code.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "qr-code.png"; sourceTree = "<group>"; };
 		10D1ECBB274CD8EB00C2066A /* qr-code (1).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "qr-code (1).png"; sourceTree = "<group>"; };
 		10D1ECBD274CF94100C2066A /* louis-reed-pwcKF7L4-no-unsplash.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "louis-reed-pwcKF7L4-no-unsplash.jpg"; sourceTree = "<group>"; };
+		10E8561827670DA0007EBC93 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 				10C56FDD274BA59F005E809D /* qr-code.png */,
 				10D1ECBB274CD8EB00C2066A /* qr-code (1).png */,
 				10D1ECBD274CF94100C2066A /* louis-reed-pwcKF7L4-no-unsplash.jpg */,
+				10E8561827670DA0007EBC93 /* Constants.swift */,
 			);
 			path = "QR_Code Scanner";
 			sourceTree = "<group>";
@@ -205,6 +208,7 @@
 				10783603275497B10014527A /* HistoryViewController.swift in Sources */,
 				10C56FDC274B8C02005E809D /* ImageScannerViewController.swift in Sources */,
 				10C56FD8274B698A005E809D /* DetailsViewController.swift in Sources */,
+				10E8561927670DA0007EBC93 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

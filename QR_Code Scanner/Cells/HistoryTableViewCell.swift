@@ -11,8 +11,8 @@ import UIKit
 class HistoryTableViewCell: UITableViewCell {
 
     @IBOutlet weak var cellLabel: UILabel!
-    
     @IBOutlet weak var copyBtnLabel: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         copyBtnLabel.layer.cornerRadius = 4

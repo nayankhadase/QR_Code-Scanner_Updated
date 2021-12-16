@@ -18,7 +18,6 @@ class ViewController: UIViewController {
         btn2Label.layer.cornerRadius = 10
         btn2Label.clipsToBounds = true
         btn1Label.clipsToBounds = true
-        // Do any additional setup after loading the view.
     }
     
 
